@@ -298,6 +298,10 @@ object EsClient {
     }
 
     val esConfig = Map("es.mapping.id" -> "id") ++
+    Map(
+      "es.nodes.wan.only" -> "true",
+      "es.net.ssl" -> "true",
+      "es.nodes.resolve.hostname" -> "false") ++
       usernamePasswordOpt.map(usernamePassword =>
         Map(
           "es.net.http.auth.user" -> usernamePassword._1,
