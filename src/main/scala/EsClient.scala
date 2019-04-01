@@ -301,7 +301,8 @@ object EsClient {
     Map(
       "es.nodes.wan.only" -> "true",
       "es.net.ssl" -> "true",
-      "es.nodes.resolve.hostname" -> "false") ++
+      "es.nodes.resolve.hostname" -> "false",
+      "es.nodes.discovery" -> "false") ++
       usernamePasswordOpt.map(usernamePassword =>
         Map(
           "es.net.http.auth.user" -> usernamePassword._1,
